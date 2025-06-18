@@ -5,7 +5,7 @@ metadata:
   labels:
     app: kdh            # 라벨 (서비스와 매칭 용도)
 spec:
-  replicas: 10                # 복제 파드 개수
+  replicas: 5                # 복제 파드 개수
   selector:
     matchLabels:
       app: kdh             # 파드를 선택하는 라벨
