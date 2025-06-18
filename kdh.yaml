@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-kdh     # Deployment 이름
+  labels:
+    app: kdh            # 라벨 (서비스와 매칭 용도)
+spec:
+  replicas: 3                # 복제 파드 개수
+  selector:
+    matchLabels:
+      app: kdh             # 파드를 선택하는 라벨
+  template:
+    metadata:
+      labels:
+        app: kdh           # 파드에 붙일 라벨 (selector와 일치해야 함)
+    spec:
+      containers:
+      - name: nginx-kdh
+        image: specialmoons/nginx:kdh  # 사용할 컨테이너 이미지
+        ports:
+        - containerPort: 80  # 컨테이너 내부 포트
+        # env, volumeMounts 등 추가 설정 가능
