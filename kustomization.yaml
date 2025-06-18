@@ -1,8 +1,2 @@
-secretGenerator:
-  - name: mysql-pass
-    literals:
-      - password=mannmae
 resources:
-  - react-deployment.yaml
-  - mysql-deployment.yaml
-  - node-deployment.yaml
+  - kdh.yaml
